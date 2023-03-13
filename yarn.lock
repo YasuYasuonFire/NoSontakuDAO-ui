@@ -5669,6 +5669,13 @@
     "@babel/helper-plugin-utils" "7.10.4"
     "@mdx-js/util" "1.6.22"
 
+"babel-plugin-dynamic-import-node@^2.3.3":
+  "integrity" "sha512-jZVI+s9Zg3IqA/kdi0i6UDCybUI3aSBLnglhYbSSjKlV7yF1F/5LWv8MakQmvYpnbJDS6fcBL2KzHSxNCMtWSQ=="
+  "resolved" "https://registry.npmjs.org/babel-plugin-dynamic-import-node/-/babel-plugin-dynamic-import-node-2.3.3.tgz"
+  "version" "2.3.3"
+  dependencies:
+    "object.assign" "^4.1.0"
+
 "babel-plugin-emotion@^10.0.27":
   "integrity" "sha512-SMSkGoqTbTyUTDeuVuPIWifPdUGkTk1Kf9BWRiXIOIcuyMfsdp2EjeiiFvOzX8NOBvEh/ypKYvUh2rkgAJMCLA=="
   "resolved" "https://registry.npmjs.org/babel-plugin-emotion/-/babel-plugin-emotion-10.2.2.tgz"
@@ -12972,7 +12979,7 @@
   dependencies:
     "isobject" "^3.0.0"
 
-"object.assign@^4.1.2", "object.assign@^4.1.4":
+"object.assign@^4.1.0", "object.assign@^4.1.2", "object.assign@^4.1.4":
   "integrity" "sha512-1mxKf0e58bvyjSCtKYY4sRe9itRk3PJpquJOjeIkz885CczcI4IvJJDLPS72oowuSh+pBxUFROpX+TU++hxhZQ=="
   "resolved" "https://registry.npmjs.org/object.assign/-/object.assign-4.1.4.tgz"
   "version" "4.1.4"
