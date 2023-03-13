@@ -1,5 +1,11 @@
-import { Dashboard } from 'src/components/screens/Dashboard'
+import dynamic from "next/dynamic";
 
-const AppPage = () => <Dashboard />
+const Dashboard = dynamic(() => import("src/components/screens/Dashboard"), {
+    ssr: false,
+  });
+
+function AppPage() {
+    return <Dashboard />;
+}
 
 export default AppPage

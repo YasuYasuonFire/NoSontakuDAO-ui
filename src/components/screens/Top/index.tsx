@@ -12,6 +12,7 @@ import styled, { css } from 'styled-components'
 import { MobileMenu } from './Menu'
 import { Backers, BackersProps } from './parts/Backers'
 import { Background } from './parts/Background'
+import BackgroundImage from './parts/MyBackground'
 import { CurrentMarkets } from './parts/CurrentMarkets'
 import { FirstView } from './parts/FirstView'
 export type TopProps = BackersProps
@@ -21,16 +22,18 @@ export const Top: FC<TopProps> = ({ backers }) => {
   const [isMenuOpen, setMenuOpen] = useState(false)
   return (
     <>
-      <TopHeader openMenu={() => setMenuOpen(true)} />
+      {/* <TopHeader openMenu={() => setMenuOpen(true)} /> */}
       <Main $locale={locale as Locale}>
-        <Background />
-        <FirstView />
-        <CurrentMarkets />
-        {backers.length > 0 && <Backers backers={backers} />}
-        <MobileMenu isOpen={isMenuOpen} close={() => setMenuOpen(false)} />
+        {/* <Background /> */}
+        <BackgroundImage imageUrl="https://storage.googleapis.com/klab-sbt.appspot.com/json/NONO-02.jpg">
+          <FirstView />
+        </BackgroundImage>      
+        {/* <CurrentMarkets /> */}
+        {/* {backers.length > 0 && <Backers backers={backers} />} */}
+        {/* <MobileMenu isOpen={isMenuOpen} close={() => setMenuOpen(false)} /> */}
       </Main>
-      <TopFooter />
-      <LaunchPadPop />
+      {/* <TopFooter /> */}
+      {/* <LaunchPadPop /> */}
     </>
   )
 }

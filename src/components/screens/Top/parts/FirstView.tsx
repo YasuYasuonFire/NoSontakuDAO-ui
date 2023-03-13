@@ -22,32 +22,60 @@ export const FirstView = asStyled(({ className }) => {
   return (
     <FirstViewSection className={className}>
       <Content>
-        <h1>
+        {/* <h1>
           <div>{t`Low Risk Farming on Astar Network`}</div>
-        </h1>
+        </h1> */}
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
         <div>
-          <SubTitle>{t`The largest lending protocol in the Polkadot ecosystem`}</SubTitle>
+          {/* <SubTitle>{t`The largest lending protocol in the Polkadot ecosystem`}</SubTitle> */}
           <Control>
             <GradientCtaLink href={APP} newTab>{t`Launch App`}</GradientCtaLink>
-            <GradientCtaButton
+            {/* <GradientCtaButton
               onClick={() =>
                 open({
                   title: t`Sorry`,
                   message: t`Starlay Finance does not support mobile access currently. Please connect to this website using your PC.`,
                 })
               }
-            >{t`Launch App`}</GradientCtaButton>
-            <Link href={DOCS}>
+            >{t`Launch App`}</GradientCtaButton> */}
+            {/* <Link href={DOCS}>
               {t`Explore the docs`} <IconArrowRight />
-            </Link>
+            </Link> */}
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
           </Control>
-          <PoweredBy>
+          {/* <PoweredBy>
             <span>{t`Powered by`}</span>
             <Image src={LogoAstar} alt={t`ASTAR`} height={32} width={101} />
-          </PoweredBy>
+          </PoweredBy> */}
         </div>
-        <AssetsMobile assets={ASSETS} />
-        <Assets assets={TOP_ASSETS} />
+        {/* <AssetsMobile assets={ASSETS} />
+        <Assets assets={TOP_ASSETS} /> */}
       </Content>
     </FirstViewSection>
   )

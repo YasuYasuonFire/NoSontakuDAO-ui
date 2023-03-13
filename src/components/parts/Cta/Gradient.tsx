@@ -41,8 +41,9 @@ const hoverBackgroundKeyframes = keyframes`
 const ctaStyle = css`
   display: block;
   position: relative;
-  width: 150px;
-  height: 48px;
+  left:-110px;
+  width: 220px;
+  height: 85px;
   padding: 3px;
   border-radius: 24px;
   overflow: hidden;
