@@ -23,6 +23,11 @@ export const Top: FC<TopProps> = ({ backers }) => {
   return (
     <>
       {/* <TopHeader openMenu={() => setMenuOpen(true)} /> */}
+        <head>
+        <title>No Sontaku DAO</title>
+        <meta name='description' content='No Sontaku DAO' />
+        <link rel='icon' href='/favicon.ico' />
+        </head>
       <Main $locale={locale as Locale}>
         {/* <Background /> */}
         <BackgroundImage imageUrl="https://storage.googleapis.com/klab-sbt.appspot.com/json/NONO-02.jpg">

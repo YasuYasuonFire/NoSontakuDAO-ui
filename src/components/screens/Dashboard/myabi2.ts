@@ -1,11 +1,11 @@
 const abi = {
   "source": {
-    "hash": "0x4dabcb0077c487517b083be31dfb2f3952d4fa55c0c06f3a5c05fb4b848f4e06",
+    "hash": "0x0caf528a0ee0be7b6d0544c78b4763d98e2cffddf12c1e04d4796c208787e9af",
     "language": "ink! 3.4.0",
     "compiler": "rustc 1.68.0-nightly"
   },
   "contract": {
-    "name": "governance_token",
+    "name": "eval_token",
     "version": "2.2.0",
     "authors": [
       "Supercolony <green.baneling@supercolony.net>"
@@ -22,7 +22,7 @@ const abi = {
                 "displayName": [
                   "Option"
                 ],
-                "type": 13
+                "type": 21
               }
             },
             {
@@ -31,7 +31,7 @@ const abi = {
                 "displayName": [
                   "Option"
                 ],
-                "type": 13
+                "type": 21
               }
             },
             {
@@ -41,6 +41,15 @@ const abi = {
                   "u8"
                 ],
                 "type": 4
+              }
+            },
+            {
+              "label": "account",
+              "type": {
+                "displayName": [
+                  "AccountId"
+                ],
+                "type": 2
               }
             }
           ],
@@ -53,115 +62,6 @@ const abi = {
       "docs": [],
       "events": [],
       "messages": [
-        {
-          "args": [
-            {
-              "label": "spender",
-              "type": {
-                "displayName": [
-                  "psp22_external",
-                  "DecreaseAllowanceInput1"
-                ],
-                "type": 2
-              }
-            },
-            {
-              "label": "delta_value",
-              "type": {
-                "displayName": [
-                  "psp22_external",
-                  "DecreaseAllowanceInput2"
-                ],
-                "type": 0
-              }
-            }
-          ],
-          "docs": [
-            " Atomically decreases the allowance granted to `spender` by the caller.",
-            "",
-            " An `Approval` event is emitted.",
-            "",
-            " # Errors",
-            "",
-            " Returns `InsufficientAllowance` error if there are not enough tokens allowed",
-            " by owner for `spender`.",
-            "",
-            " Returns `ZeroSenderAddress` error if sender's address is zero.",
-            "",
-            " Returns `ZeroRecipientAddress` error if recipient's address is zero."
-          ],
-          "label": "PSP22::decrease_allowance",
-          "mutates": true,
-          "payable": false,
-          "returnType": {
-            "displayName": [
-              "psp22_external",
-              "DecreaseAllowanceOutput"
-            ],
-            "type": 14
-          },
-          "selector": "0xfecb57d5"
-        },
-        {
-          "args": [
-            {
-              "label": "to",
-              "type": {
-                "displayName": [
-                  "psp22_external",
-                  "TransferInput1"
-                ],
-                "type": 2
-              }
-            },
-            {
-              "label": "value",
-              "type": {
-                "displayName": [
-                  "psp22_external",
-                  "TransferInput2"
-                ],
-                "type": 0
-              }
-            },
-            {
-              "label": "data",
-              "type": {
-                "displayName": [
-                  "psp22_external",
-                  "TransferInput3"
-                ],
-                "type": 12
-              }
-            }
-          ],
-          "docs": [
-            " Transfers `value` amount of tokens from the caller's account to account `to`",
-            " with additional `data` in unspecified format.",
-            "",
-            " On success a `Transfer` event is emitted.",
-            "",
-            " # Errors",
-            "",
-            " Returns `InsufficientBalance` error if there are not enough tokens on",
-            " the caller's account Balance.",
-            "",
-            " Returns `ZeroSenderAddress` error if sender's address is zero.",
-            "",
-            " Returns `ZeroRecipientAddress` error if recipient's address is zero."
-          ],
-          "label": "PSP22::transfer",
-          "mutates": true,
-          "payable": false,
-          "returnType": {
-            "displayName": [
-              "psp22_external",
-              "TransferOutput"
-            ],
-            "type": 14
-          },
-          "selector": "0xdb20f9f5"
-        },
         {
           "args": [
             {
@@ -209,7 +109,7 @@ const abi = {
               "type": {
                 "displayName": [
                   "psp22_external",
-                  "IncreaseAllowanceInput1"
+                  "DecreaseAllowanceInput1"
                 ],
                 "type": 2
               }
@@ -219,113 +119,37 @@ const abi = {
               "type": {
                 "displayName": [
                   "psp22_external",
-                  "IncreaseAllowanceInput2"
+                  "DecreaseAllowanceInput2"
                 ],
                 "type": 0
               }
             }
           ],
           "docs": [
-            " Atomically increases the allowance granted to `spender` by the caller.",
+            " Atomically decreases the allowance granted to `spender` by the caller.",
             "",
             " An `Approval` event is emitted.",
             "",
             " # Errors",
             "",
-            " Returns `ZeroSenderAddress` error if sender's address is zero.",
-            "",
-            " Returns `ZeroRecipientAddress` error if recipient's address is zero."
-          ],
-          "label": "PSP22::increase_allowance",
-          "mutates": true,
-          "payable": false,
-          "returnType": {
-            "displayName": [
-              "psp22_external",
-              "IncreaseAllowanceOutput"
-            ],
-            "type": 14
-          },
-          "selector": "0x96d6b57a"
-        },
-        {
-          "args": [
-            {
-              "label": "spender",
-              "type": {
-                "displayName": [
-                  "psp22_external",
-                  "ApproveInput1"
-                ],
-                "type": 2
-              }
-            },
-            {
-              "label": "value",
-              "type": {
-                "displayName": [
-                  "psp22_external",
-                  "ApproveInput2"
-                ],
-                "type": 0
-              }
-            }
-          ],
-          "docs": [
-            " Allows `spender` to withdraw from the caller's account multiple times, up to",
-            " the `value` amount.",
-            "",
-            " If this function is called again it overwrites the current allowance with `value`.",
-            "",
-            " An `Approval` event is emitted.",
-            "",
-            " # Errors",
+            " Returns `InsufficientAllowance` error if there are not enough tokens allowed",
+            " by owner for `spender`.",
             "",
             " Returns `ZeroSenderAddress` error if sender's address is zero.",
             "",
             " Returns `ZeroRecipientAddress` error if recipient's address is zero."
           ],
-          "label": "PSP22::approve",
+          "label": "PSP22::decrease_allowance",
           "mutates": true,
           "payable": false,
           "returnType": {
             "displayName": [
               "psp22_external",
-              "ApproveOutput"
+              "DecreaseAllowanceOutput"
             ],
-            "type": 14
+            "type": 22
           },
-          "selector": "0xb20f1bbd"
-        },
-        {
-          "args": [
-            {
-              "label": "owner",
-              "type": {
-                "displayName": [
-                  "psp22_external",
-                  "BalanceOfInput1"
-                ],
-                "type": 2
-              }
-            }
-          ],
-          "docs": [
-            " Returns the account Balance for the specified `owner`.",
-            "",
-            " Returns `0` if the account is non-existent."
-          ],
-          "label": "PSP22::balance_of",
-          "mutates": false,
-          "payable": false,
-          "returnType": {
-            "displayName": [
-              "psp22_external",
-              "BalanceOfOutput"
-            ],
-            "type": 0
-          },
-          "selector": "0x6568382f"
+          "selector": "0xfecb57d5"
         },
         {
           "args": [
@@ -399,9 +223,115 @@ const abi = {
               "psp22_external",
               "TransferFromOutput"
             ],
-            "type": 14
+            "type": 22
           },
           "selector": "0x54b3c76e"
+        },
+        {
+          "args": [
+            {
+              "label": "spender",
+              "type": {
+                "displayName": [
+                  "psp22_external",
+                  "IncreaseAllowanceInput1"
+                ],
+                "type": 2
+              }
+            },
+            {
+              "label": "delta_value",
+              "type": {
+                "displayName": [
+                  "psp22_external",
+                  "IncreaseAllowanceInput2"
+                ],
+                "type": 0
+              }
+            }
+          ],
+          "docs": [
+            " Atomically increases the allowance granted to `spender` by the caller.",
+            "",
+            " An `Approval` event is emitted.",
+            "",
+            " # Errors",
+            "",
+            " Returns `ZeroSenderAddress` error if sender's address is zero.",
+            "",
+            " Returns `ZeroRecipientAddress` error if recipient's address is zero."
+          ],
+          "label": "PSP22::increase_allowance",
+          "mutates": true,
+          "payable": false,
+          "returnType": {
+            "displayName": [
+              "psp22_external",
+              "IncreaseAllowanceOutput"
+            ],
+            "type": 22
+          },
+          "selector": "0x96d6b57a"
+        },
+        {
+          "args": [
+            {
+              "label": "to",
+              "type": {
+                "displayName": [
+                  "psp22_external",
+                  "TransferInput1"
+                ],
+                "type": 2
+              }
+            },
+            {
+              "label": "value",
+              "type": {
+                "displayName": [
+                  "psp22_external",
+                  "TransferInput2"
+                ],
+                "type": 0
+              }
+            },
+            {
+              "label": "data",
+              "type": {
+                "displayName": [
+                  "psp22_external",
+                  "TransferInput3"
+                ],
+                "type": 12
+              }
+            }
+          ],
+          "docs": [
+            " Transfers `value` amount of tokens from the caller's account to account `to`",
+            " with additional `data` in unspecified format.",
+            "",
+            " On success a `Transfer` event is emitted.",
+            "",
+            " # Errors",
+            "",
+            " Returns `InsufficientBalance` error if there are not enough tokens on",
+            " the caller's account Balance.",
+            "",
+            " Returns `ZeroSenderAddress` error if sender's address is zero.",
+            "",
+            " Returns `ZeroRecipientAddress` error if recipient's address is zero."
+          ],
+          "label": "PSP22::transfer",
+          "mutates": true,
+          "payable": false,
+          "returnType": {
+            "displayName": [
+              "psp22_external",
+              "TransferOutput"
+            ],
+            "type": 22
+          },
+          "selector": "0xdb20f9f5"
         },
         {
           "args": [],
@@ -419,6 +349,288 @@ const abi = {
             "type": 0
           },
           "selector": "0x162df8c2"
+        },
+        {
+          "args": [
+            {
+              "label": "owner",
+              "type": {
+                "displayName": [
+                  "psp22_external",
+                  "BalanceOfInput1"
+                ],
+                "type": 2
+              }
+            }
+          ],
+          "docs": [
+            " Returns the account Balance for the specified `owner`.",
+            "",
+            " Returns `0` if the account is non-existent."
+          ],
+          "label": "PSP22::balance_of",
+          "mutates": false,
+          "payable": false,
+          "returnType": {
+            "displayName": [
+              "psp22_external",
+              "BalanceOfOutput"
+            ],
+            "type": 0
+          },
+          "selector": "0x6568382f"
+        },
+        {
+          "args": [
+            {
+              "label": "spender",
+              "type": {
+                "displayName": [
+                  "psp22_external",
+                  "ApproveInput1"
+                ],
+                "type": 2
+              }
+            },
+            {
+              "label": "value",
+              "type": {
+                "displayName": [
+                  "psp22_external",
+                  "ApproveInput2"
+                ],
+                "type": 0
+              }
+            }
+          ],
+          "docs": [
+            " Allows `spender` to withdraw from the caller's account multiple times, up to",
+            " the `value` amount.",
+            "",
+            " If this function is called again it overwrites the current allowance with `value`.",
+            "",
+            " An `Approval` event is emitted.",
+            "",
+            " # Errors",
+            "",
+            " Returns `ZeroSenderAddress` error if sender's address is zero.",
+            "",
+            " Returns `ZeroRecipientAddress` error if recipient's address is zero."
+          ],
+          "label": "PSP22::approve",
+          "mutates": true,
+          "payable": false,
+          "returnType": {
+            "displayName": [
+              "psp22_external",
+              "ApproveOutput"
+            ],
+            "type": 22
+          },
+          "selector": "0xb20f1bbd"
+        },
+        {
+          "args": [
+            {
+              "label": "role",
+              "type": {
+                "displayName": [
+                  "accesscontrol_external",
+                  "GrantRoleInput1"
+                ],
+                "type": 14
+              }
+            },
+            {
+              "label": "account",
+              "type": {
+                "displayName": [
+                  "accesscontrol_external",
+                  "GrantRoleInput2"
+                ],
+                "type": 2
+              }
+            }
+          ],
+          "docs": [
+            " Grants `role` to `account`.",
+            "",
+            " On success a `RoleGranted` event is emitted.",
+            "",
+            " # Errors",
+            "",
+            " Returns with `MissingRole` error if caller can't grant the role.",
+            " Returns with `RoleRedundant` error `account` has `role`."
+          ],
+          "label": "AccessControl::grant_role",
+          "mutates": true,
+          "payable": false,
+          "returnType": {
+            "displayName": [
+              "accesscontrol_external",
+              "GrantRoleOutput"
+            ],
+            "type": 24
+          },
+          "selector": "0x4ac062fd"
+        },
+        {
+          "args": [
+            {
+              "label": "role",
+              "type": {
+                "displayName": [
+                  "accesscontrol_external",
+                  "HasRoleInput1"
+                ],
+                "type": 14
+              }
+            },
+            {
+              "label": "address",
+              "type": {
+                "displayName": [
+                  "accesscontrol_external",
+                  "HasRoleInput2"
+                ],
+                "type": 2
+              }
+            }
+          ],
+          "docs": [
+            " Returns `true` if `account` has been granted `role`."
+          ],
+          "label": "AccessControl::has_role",
+          "mutates": false,
+          "payable": false,
+          "returnType": {
+            "displayName": [
+              "accesscontrol_external",
+              "HasRoleOutput"
+            ],
+            "type": 26
+          },
+          "selector": "0xc1d9ac18"
+        },
+        {
+          "args": [
+            {
+              "label": "role",
+              "type": {
+                "displayName": [
+                  "accesscontrol_external",
+                  "GetRoleAdminInput1"
+                ],
+                "type": 14
+              }
+            }
+          ],
+          "docs": [
+            " Returns the admin role that controls `role`. See `grant_role` and `revoke_role`."
+          ],
+          "label": "AccessControl::get_role_admin",
+          "mutates": false,
+          "payable": false,
+          "returnType": {
+            "displayName": [
+              "accesscontrol_external",
+              "GetRoleAdminOutput"
+            ],
+            "type": 14
+          },
+          "selector": "0x83da3bb2"
+        },
+        {
+          "args": [
+            {
+              "label": "role",
+              "type": {
+                "displayName": [
+                  "accesscontrol_external",
+                  "RevokeRoleInput1"
+                ],
+                "type": 14
+              }
+            },
+            {
+              "label": "account",
+              "type": {
+                "displayName": [
+                  "accesscontrol_external",
+                  "RevokeRoleInput2"
+                ],
+                "type": 2
+              }
+            }
+          ],
+          "docs": [
+            " Revokes `role` from `account`.",
+            "",
+            " On success a `RoleRevoked` event is emitted.",
+            "",
+            " # Errors",
+            "",
+            " Returns with `MissingRole` error if caller can't grant the `role` or if `account` doesn't have `role`."
+          ],
+          "label": "AccessControl::revoke_role",
+          "mutates": true,
+          "payable": false,
+          "returnType": {
+            "displayName": [
+              "accesscontrol_external",
+              "RevokeRoleOutput"
+            ],
+            "type": 24
+          },
+          "selector": "0x6e4f0991"
+        },
+        {
+          "args": [
+            {
+              "label": "role",
+              "type": {
+                "displayName": [
+                  "accesscontrol_external",
+                  "RenounceRoleInput1"
+                ],
+                "type": 14
+              }
+            },
+            {
+              "label": "account",
+              "type": {
+                "displayName": [
+                  "accesscontrol_external",
+                  "RenounceRoleInput2"
+                ],
+                "type": 2
+              }
+            }
+          ],
+          "docs": [
+            " Revokes `role` from the calling account.",
+            " Roles are often managed via `grant_role` and `revoke_role`: this function's",
+            " purpose is to provide a mechanism for accounts to lose their privileges",
+            " if they are compromised (such as when a trusted device is misplaced).",
+            "",
+            " On success a `RoleRevoked` event is emitted.",
+            "",
+            " # Errors",
+            "",
+            " Returns with `InvalidCaller` error if caller is not `account`.",
+            " Returns with `MissingRole` error if `account` doesn't have `role`."
+          ],
+          "label": "AccessControl::renounce_role",
+          "mutates": true,
+          "payable": false,
+          "returnType": {
+            "displayName": [
+              "accesscontrol_external",
+              "RenounceRoleOutput"
+            ],
+            "type": 24
+          },
+          "selector": "0xeaf1248a"
         },
         {
           "args": [
@@ -443,12 +655,7 @@ const abi = {
               }
             }
           ],
-          "docs": [
-            " Destroys `amount` tokens from `account`, deducting from the caller's",
-            " allowance.",
-            "",
-            " See [`PSP22::_burn_from`]."
-          ],
+          "docs": [],
           "label": "PSP22Burnable::burn",
           "mutates": true,
           "payable": false,
@@ -457,7 +664,7 @@ const abi = {
               "psp22burnable_external",
               "BurnOutput"
             ],
-            "type": 14
+            "type": 22
           },
           "selector": "0x7a9da510"
         },
@@ -493,26 +700,9 @@ const abi = {
               "psp22mintable_external",
               "MintOutput"
             ],
-            "type": 14
+            "type": 22
           },
           "selector": "0xfc3c75d4"
-        },
-        {
-          "args": [],
-          "docs": [
-            " Returns the token name."
-          ],
-          "label": "PSP22Metadata::token_name",
-          "mutates": false,
-          "payable": false,
-          "returnType": {
-            "displayName": [
-              "psp22metadata_external",
-              "TokenNameOutput"
-            ],
-            "type": 13
-          },
-          "selector": "0x3d261bd4"
         },
         {
           "args": [],
@@ -527,7 +717,7 @@ const abi = {
               "psp22metadata_external",
               "TokenSymbolOutput"
             ],
-            "type": 13
+            "type": 21
           },
           "selector": "0x34205be5"
         },
@@ -547,6 +737,23 @@ const abi = {
             "type": 4
           },
           "selector": "0x7271b782"
+        },
+        {
+          "args": [],
+          "docs": [
+            " Returns the token name."
+          ],
+          "label": "PSP22Metadata::token_name",
+          "mutates": false,
+          "payable": false,
+          "returnType": {
+            "displayName": [
+              "psp22metadata_external",
+              "TokenNameOutput"
+            ],
+            "type": 21
+          },
+          "selector": "0x3d261bd4"
         }
       ]
     },
@@ -710,6 +917,94 @@ const abi = {
               }
             },
             "name": "metadata"
+          },
+          {
+            "layout": {
+              "struct": {
+                "fields": [
+                  {
+                    "layout": {
+                      "cell": {
+                        "key": "0x75b08c5a00000000000000000000000000000000000000000000000000000000",
+                        "ty": 13
+                      }
+                    },
+                    "name": "admin_roles"
+                  },
+                  {
+                    "layout": {
+                      "struct": {
+                        "fields": [
+                          {
+                            "layout": {
+                              "cell": {
+                                "key": "0x2779f6fc00000000000000000000000000000000000000000000000000000000",
+                                "ty": 17
+                              }
+                            },
+                            "name": "members"
+                          },
+                          {
+                            "layout": {
+                              "enum": {
+                                "dispatchKey": "0x2879f6fc00000000000000000000000000000000000000000000000000000000",
+                                "variants": {
+                                  "0": {
+                                    "fields": [
+                                      {
+                                        "layout": {
+                                          "cell": {
+                                            "key": "0x2979f6fc00000000000000000000000000000000000000000000000000000000",
+                                            "ty": 11
+                                          }
+                                        },
+                                        "name": null
+                                      }
+                                    ]
+                                  },
+                                  "1": {
+                                    "fields": []
+                                  }
+                                }
+                              }
+                            },
+                            "name": "_reserved"
+                          }
+                        ]
+                      }
+                    },
+                    "name": "members"
+                  },
+                  {
+                    "layout": {
+                      "enum": {
+                        "dispatchKey": "0x76b08c5a00000000000000000000000000000000000000000000000000000000",
+                        "variants": {
+                          "0": {
+                            "fields": [
+                              {
+                                "layout": {
+                                  "cell": {
+                                    "key": "0x77b08c5a00000000000000000000000000000000000000000000000000000000",
+                                    "ty": 11
+                                  }
+                                },
+                                "name": null
+                              }
+                            ]
+                          },
+                          "1": {
+                            "fields": []
+                          }
+                        }
+                      }
+                    },
+                    "name": "_reserved"
+                  }
+                ]
+              }
+            },
+            "name": "access"
           }
         ]
       }
@@ -897,6 +1192,127 @@ const abi = {
         "id": 13,
         "type": {
           "def": {
+            "composite": {
+              "fields": [
+                {
+                  "type": 15
+                }
+              ]
+            }
+          },
+          "params": [
+            {
+              "name": "K",
+              "type": 14
+            },
+            {
+              "name": "V",
+              "type": 14
+            }
+          ],
+          "path": [
+            "openbrush_lang",
+            "storage",
+            "mapping",
+            "Mapping"
+          ]
+        }
+      },
+      {
+        "id": 14,
+        "type": {
+          "def": {
+            "primitive": "u32"
+          }
+        }
+      },
+      {
+        "id": 15,
+        "type": {
+          "def": {
+            "sequence": {
+              "type": 16
+            }
+          }
+        }
+      },
+      {
+        "id": 16,
+        "type": {
+          "def": {
+            "tuple": [
+              14,
+              14
+            ]
+          }
+        }
+      },
+      {
+        "id": 17,
+        "type": {
+          "def": {
+            "composite": {
+              "fields": [
+                {
+                  "type": 19
+                }
+              ]
+            }
+          },
+          "params": [
+            {
+              "name": "K",
+              "type": 18
+            },
+            {
+              "name": "V",
+              "type": 11
+            }
+          ],
+          "path": [
+            "openbrush_lang",
+            "storage",
+            "mapping",
+            "Mapping"
+          ]
+        }
+      },
+      {
+        "id": 18,
+        "type": {
+          "def": {
+            "tuple": [
+              14,
+              2
+            ]
+          }
+        }
+      },
+      {
+        "id": 19,
+        "type": {
+          "def": {
+            "sequence": {
+              "type": 20
+            }
+          }
+        }
+      },
+      {
+        "id": 20,
+        "type": {
+          "def": {
+            "tuple": [
+              18,
+              11
+            ]
+          }
+        }
+      },
+      {
+        "id": 21,
+        "type": {
+          "def": {
             "variant": {
               "variants": [
                 {
@@ -927,7 +1343,7 @@ const abi = {
         }
       },
       {
-        "id": 14,
+        "id": 22,
         "type": {
           "def": {
             "variant": {
@@ -944,7 +1360,7 @@ const abi = {
                 {
                   "fields": [
                     {
-                      "type": 15
+                      "type": 23
                     }
                   ],
                   "index": 1,
@@ -960,7 +1376,7 @@ const abi = {
             },
             {
               "name": "E",
-              "type": 15
+              "type": 23
             }
           ],
           "path": [
@@ -969,7 +1385,7 @@ const abi = {
         }
       },
       {
-        "id": 15,
+        "id": 23,
         "type": {
           "def": {
             "variant": {
@@ -1020,6 +1436,86 @@ const abi = {
             "psp22",
             "PSP22Error"
           ]
+        }
+      },
+      {
+        "id": 24,
+        "type": {
+          "def": {
+            "variant": {
+              "variants": [
+                {
+                  "fields": [
+                    {
+                      "type": 11
+                    }
+                  ],
+                  "index": 0,
+                  "name": "Ok"
+                },
+                {
+                  "fields": [
+                    {
+                      "type": 25
+                    }
+                  ],
+                  "index": 1,
+                  "name": "Err"
+                }
+              ]
+            }
+          },
+          "params": [
+            {
+              "name": "T",
+              "type": 11
+            },
+            {
+              "name": "E",
+              "type": 25
+            }
+          ],
+          "path": [
+            "Result"
+          ]
+        }
+      },
+      {
+        "id": 25,
+        "type": {
+          "def": {
+            "variant": {
+              "variants": [
+                {
+                  "index": 0,
+                  "name": "InvalidCaller"
+                },
+                {
+                  "index": 1,
+                  "name": "MissingRole"
+                },
+                {
+                  "index": 2,
+                  "name": "RoleRedundant"
+                }
+              ]
+            }
+          },
+          "path": [
+            "openbrush_contracts",
+            "traits",
+            "errors",
+            "access_control",
+            "AccessControlError"
+          ]
+        }
+      },
+      {
+        "id": 26,
+        "type": {
+          "def": {
+            "primitive": "bool"
+          }
         }
       }
     ]
