@@ -40,7 +40,7 @@ const storageDepositLimit = null
 //GOVTOKEN
 //const address_gov = "ZH3SFHCGDTNtvJ6rrZoJ4ZKNaauKB4RG4Q1XLBewjjTysnh";
 //const address = "ab6cMAFjtKAnYnRhKHjmSmwZVoghBTbh6ku9M8oxY9HzB82";//shibuya
-const address = "b4Cg8RiW3fZ5jD8FPmPwZXSHtmcGWi9eFac8M6K7s46utMu";//shiden
+const address_gov = "b4Cg8RiW3fZ5jD8FPmPwZXSHtmcGWi9eFac8M6K7s46utMu";//shiden
 
 //No Sontaku Token
 //const address_nst = "YdypW2eBQg3A4nXmGeWp6dnUbdMDswa1XjmBeGbwrkpxEQZ";
