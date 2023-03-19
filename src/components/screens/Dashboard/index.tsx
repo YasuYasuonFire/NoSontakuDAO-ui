@@ -24,29 +24,30 @@ import { send } from 'process'
 // options.set({ log: 'debug' });
 
 // local
-const WS_PROVIDER = 'ws://127.0.0.1:9944'
+//const WS_PROVIDER = 'ws://127.0.0.1:9944'
 
 // shibuya
 //const WS_PROVIDER = 'wss://shibuya-rpc.dwellir.com'
 
 // shiden
 //const WS_PROVIDER = 'wss://shiden-rpc.dwellir.com'
-//const WS_PROVIDER = 'wss://shiden.api.onfinality.io/public-ws'
+const WS_PROVIDER = 'wss://shiden.api.onfinality.io/public-ws'
 
 const proofSize = 131072
 const refTime = 6219235328
 const storageDepositLimit = null
 
 //GOVTOKEN
-const address_gov = "ZH3SFHCGDTNtvJ6rrZoJ4ZKNaauKB4RG4Q1XLBewjjTysnh";
+//const address_gov = "ZH3SFHCGDTNtvJ6rrZoJ4ZKNaauKB4RG4Q1XLBewjjTysnh";
 //const address = "ab6cMAFjtKAnYnRhKHjmSmwZVoghBTbh6ku9M8oxY9HzB82";//shibuya
-//const address = "bDnAheHGy4yMfxCEVaX9QxXQ5CcdGAoqepUk84XwES9P9KZ";//shiden
+const address = "b4Cg8RiW3fZ5jD8FPmPwZXSHtmcGWi9eFac8M6K7s46utMu";//shiden
 
 //No Sontaku Token
-const address_nst = "YdypW2eBQg3A4nXmGeWp6dnUbdMDswa1XjmBeGbwrkpxEQZ";
-
+//const address_nst = "YdypW2eBQg3A4nXmGeWp6dnUbdMDswa1XjmBeGbwrkpxEQZ";
+const address_nst = "agwtJv4W3mqd6c3Wi1QYnn7pVsYJGwb7LHaJQrzMjzLTHnG";//shiden
 //DAO
-const address_dao = "a2kqvEc3wnTGezPaL3d8M3i3tqjPTyzL7E9WrcZrVsTqk8s";
+//const address_dao = "a2kqvEc3wnTGezPaL3d8M3i3tqjPTyzL7E9WrcZrVsTqk8s";
+const address_dao = "bM2fvvgm6gAKbQNqxwJjo5vwmPVjkSDiBV5WxpMjTcVQXX5";//shiden
 
 const Dashboard: NextPage = () => {
   // const [address, setAddress] = useState('')
