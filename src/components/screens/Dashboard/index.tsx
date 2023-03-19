@@ -540,7 +540,6 @@ const CarryOnExecute = async () => {
               ))}
             </select>
       </div>
-      <br />
     
     <div className={styles.container}>
         <Head>
@@ -552,10 +551,7 @@ const CarryOnExecute = async () => {
         {loading ? <Spinner /> : null}
 
         <main className={styles.main}>
-
-
-       
-
+        <div className={styles.leftcolumn}>
           <h2 className={styles.underline}>初めての方&#40;For New Commer&#41;</h2>
           <div>
             <button className={styles.btnflatborder} onClick={initialClaim}>ガバナンストークンをゲット！&#40;Get Govornance Token&#41;</button><br />
@@ -596,7 +592,9 @@ const CarryOnExecute = async () => {
                 ))}
               </tbody>
             </table>
-          </div><br/><br/>
+          </div>
+        </div>
+        <div className={styles.rightcolumn}>
           <h2 className={styles.underline}>投票&#40;Vote 🚀&#41;</h2>
           <br />
           <div>
@@ -693,6 +691,7 @@ const CarryOnExecute = async () => {
               </div>
             </label>
             <button className={styles.btnflatborder} onClick={CarryOnExecute}>終了する&#40;propose!!&#41;</button>
+          </div>
           </div>
         </main>
       </div></>

@@ -12,10 +12,23 @@
   align-items: center; */
   display: flex;
   flex-wrap: wrap;
-  flex-direction: column;
+  /* flex-direction: column; */
   height: 750px;
   gap: 2px;
   justify-content: center;
+}
+
+.leftcolumn {
+  /* width: 400px; */
+  /* background-color: #ccc; */
+  flex-basis: 50%;
+  padding-right:15px;
+}
+
+.rightcolumn {
+  flex: 1; 
+  padding-left:15px;
+  /* background-color: #eee; */
 }
 
 .footer {
@@ -140,7 +153,8 @@
 }
 
 .underline {
-  border-bottom:double 5px white;/*二重線を引く*/
+  font-size:25px;
+  /*border-bottom:double 5px white;/*二重線を引く*/
   }
 
 .btnflatborder {
