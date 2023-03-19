@@ -31,7 +31,7 @@ const MyApp: FC<Omit<AppProps, 'pageProps'> & { pageProps: PageStaticProps }> =
     return (
       <>
         <GlobalStyles />
-        <Favicons />
+        {/* <Favicons /> */}
         <Head>
           <meta
             name="viewport"
@@ -42,7 +42,7 @@ const MyApp: FC<Omit<AppProps, 'pageProps'> & { pageProps: PageStaticProps }> =
         </Head>
         <Web3ReactProvider getLibrary={getLibrary}>
           <I18nProvider>
-            <SEO {...COMMON_SEO_DATA} {...pageProps.seoProps} />
+            {/* <SEO {...COMMON_SEO_DATA} {...pageProps.seoProps} /> */}
             {!jumpToSorry && (
               <Component {...(pageProps as any)} router={router} />
             )}

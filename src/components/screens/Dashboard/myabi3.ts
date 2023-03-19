@@ -1,6 +1,6 @@
 const abi = {
   "source": {
-    "hash": "0x65cf8c40c3cf5cf2a18ee29f9652710a196ccc81bcdd36e3b2bc2b99458fefdb",
+    "hash": "0x6869cb5ca2b8363bf9e5a0130b4741181294ff2bf6d933754a3fac59e73fe5d5",
     "language": "ink! 3.4.0",
     "compiler": "rustc 1.68.0-nightly"
   },
@@ -539,7 +539,9 @@ const abi = {
         "id": 9,
         "type": {
           "def": {
-            "primitive": "str"
+            "sequence": {
+              "type": 3
+            }
           }
         }
       },
@@ -701,6 +703,14 @@ const abi = {
                 {
                   "index": 10,
                   "name": "CallerIsNotOwner"
+                },
+                {
+                  "index": 11,
+                  "name": "VoteIsWrong"
+                },
+                {
+                  "index": 12,
+                  "name": "EvalIsWrong"
                 }
               ]
             }

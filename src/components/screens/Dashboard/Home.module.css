@@ -3,13 +3,19 @@
 }
 
 .main {
-  min-height: 100vh;
+  /* min-height: 100vh;
   padding: 4rem 0;
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: left;
+  align-items: center; */
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  height: 750px;
+  gap: 2px;
+  justify-content: center;
 }
 
 .footer {
@@ -146,6 +152,7 @@
   border: solid 2px white;
   border-radius: 3px;
   transition: .4s;
+  background: grey
 }
 
 .btnflatborder:hover {
@@ -153,57 +160,76 @@
   color: white;
 }
 
-.selectdiv {
+.btnflatborder.sl01 {
   position: relative;
-  /*Don't really need this just for demo styling*/
-  
-  float: left;
-  min-width: 400px;
-  /*margin: 50px 33%;*/
+	border: 1px solid #bbbbbb;
+	border-radius: 2px;
+  width:200px;
+
 }
 
-.selectdiv:after {
-  content: '<>';
-  font: 17px "Consolas", monospace;
-  color: #333;
-  -webkit-transform: rotate(90deg);
-  -moz-transform: rotate(90deg);
-  -ms-transform: rotate(90deg);
-  transform: rotate(90deg);
-  right: 11px;
-  /*Adjust for position however you want*/
-  
-  top: 18px;
-  padding: 0 0 2px;
-  border-bottom: 1px solid #999;
-  /*left line */
-  
-  position: absolute;
-  pointer-events: none;
+.selectdiv {
+	/* overflow: hidden; */
+	/* width: 90%; */
+	margin: 2em auto;
+	text-align: center;
+}
+
+.topbutton{
+	/* overflow: hidden; */
+	/* width: 90%; */
+	margin: 2em auto;
+	text-align: center;
 }
 
 .selectdiv select {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  /* Add some styling */
-  
-  display: block;
-  width: 100%;
-  max-width: 600px;
-  /*height: 50px;*/
-  float: left;
-  margin: 5px 0px;
-  padding: 0px 24px;
-  font-size: 16px;
-  line-height: 1.75;
-  color: #333;
-  background-color: #ffffff;
-  background-image: none;
-  border: 1px solid #cccccc;
-  -ms-word-break: normal;
-  word-break: normal;
+	width: 100%;
+	padding-right: 1em;
+	cursor: pointer;
+	text-indent: 0.01px;
+	text-overflow: ellipsis;
+	border: none;
+	outline: none;
+	background: transparent;
+	background-image: none;
+	box-shadow: none;
+	-webkit-appearance: none;
+	appearance: none;
 }
+
+.selectdiv.sl01 {
+	position: relative;
+	border: 1px solid #bbbbbb;
+	border-radius: 2px;
+	background: #ffffff;
+}
+.selectdiv.sl01::before {
+	position: absolute;
+	top: 0.8em;
+	right: 0.9em;
+	width: 0;
+	height: 0;
+	padding: 0;
+	content: '';
+	border-left: 6px solid transparent;
+	border-right: 6px solid transparent;
+	border-top: 6px solid #666666;
+	pointer-events: none;
+}
+.selectdiv.sl01:after {
+	position: absolute;
+	top: 0;
+	right: 2.5em;
+	bottom: 0;
+	width: 1px;
+	content: '';
+	border-left: 1px solid #bbbbbb;
+}
+.selectdiv.sl01 select {
+	padding: 8px 38px 8px 8px;
+	color: #666666;
+}
+
 
 .thtd {
   border: solid 1px;  /* 枠線指定 */
@@ -212,4 +238,13 @@
 
 .tablecss {
   border-collapse:  collapse; /* セルの線を重ねる */
+}
+
+.inputtext {
+  width: 100%; /*親要素いっぱい広げる*/
+  padding: 10px 15px; /*ボックスを大きくする*/
+  font-size: 16px;
+  border-radius: 3px; /*ボックス角の丸み*/
+  border: 2px solid #ddd; /*枠線*/
+  box-sizing: border-box; /*横幅の解釈をpadding, borderまでとする*/
 }

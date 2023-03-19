@@ -16,6 +16,7 @@ import BackgroundImage from './parts/MyBackground'
 import { CurrentMarkets } from './parts/CurrentMarkets'
 import { FirstView } from './parts/FirstView'
 export type TopProps = BackersProps
+import Head from 'next/head'
 
 export const Top: FC<TopProps> = ({ backers }) => {
   const { locale } = useRouter()
@@ -23,11 +24,11 @@ export const Top: FC<TopProps> = ({ backers }) => {
   return (
     <>
       {/* <TopHeader openMenu={() => setMenuOpen(true)} /> */}
-        <head>
+        <Head>
         <title>No Sontaku DAO</title>
         <meta name='description' content='No Sontaku DAO' />
         <link rel='icon' href='/favicon.ico' />
-        </head>
+        </Head>
       <Main $locale={locale as Locale}>
         {/* <Background /> */}
         <BackgroundImage imageUrl="https://storage.googleapis.com/klab-sbt.appspot.com/json/NONO-02.jpg">
